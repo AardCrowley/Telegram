@@ -18,28 +18,28 @@ Once he's been added, you'll simply type /newbot in order to create your first b
 
 # Getting your Chat ID
 
-The next step will be to get your chat ID. The easiest way I've found to do this is to send a test message in your new Bot channel, then go to the following page: https://api.telegram.org/bot<token>/getUpdates (where <token> is the token you got in the last step). Upon heading to the site, you'll see a JSON-formatted list of information. Look specifically for the table "chat", which has an "id" field. Copy that ID (including any negative symbols).
+The next step will be to get your chat ID. The easiest way I've found to do this is to send a test message in your new Bot channel, then go to the following page: https://api.telegram.org/bot&lt;token&gt;/getUpdates (where &lt;token&gt; is the token you got in the last step). Upon heading to the site, you'll see a JSON-formatted list of information. Look specifically for the table "chat", which has an "id" field. Copy that ID (including any negative symbols).
 
 # Putting it all together
 
 Now, open the plugin and make the following changes. Where it says:
 
-chatID = &lt;your chat ID>
+chatID = &lt;your chat ID&gt;
 
-replace <your chat ID> with the ID you picked up from the previous step. Where it says:
+replace &lt;your chat ID&gt; with the ID you picked up from the previous step. Where it says:
 
-apiToken = "<your bot token>"
+apiToken = "&lt;your bot token&gt;"
 
 change it to say:
 
-apiToken = "bot<token>"
+apiToken = "bot&lt;token&gt;"
 
-where <token> again is what you received from creating your bot. It is imperative that "bot" precedes it. The plugin will not work without it.
+where &lt;token&gt; again is what you received from creating your bot. It is imperative that "bot" precedes it. The plugin will not work without it.
 
 From here on out, it should work out of the gate.
 
 If you're wanting to add new triggers, locate the 'triggerLines' portion, and add your trigger as such:
 
-{name = "<name of your trigger>", match = "<the trigger pattern to match>", message = "<text you want sent>"},
+{name = "&lt;name of your trigger&gt;", match = "&lt;the trigger pattern to match&gt;", message = "&lt;text you want sent&gt;"},
 
 As long as you follow that format, you should be able to add as many triggers as you like. If you have any questions or difficulties, please feel free to drop me (Crowley) a tell or a note on personal board.
