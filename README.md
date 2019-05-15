@@ -24,7 +24,7 @@ The next step will be to get your chat ID. The easiest way I've found to do this
 
 Now, open the plugin and make the following changes. Where it says:
 
-chatID = <your chat ID>
+chatID = &lt;your chat ID>
 
 replace <your chat ID> with the ID you picked up from the previous step. Where it says:
 
