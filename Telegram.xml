@@ -15,6 +15,8 @@
 
     <script>
         <![CDATA[
+async_ok, async = pcall(require, "async")
+
 local triggerLines = {
 {name = "regularDouble", match = "^For the next 15 minutes experience is doubled in honor of the new superhero.", message = "Double for 15 minutes!"},
 {name = "blessingDouble", match = "^Double experience for 10 minutes courtesy of .* daily blessing\\.", message = "Double for 10 minutes!"},
@@ -36,16 +38,11 @@ for _,v in ipairs(triggerLines) do
     ImportXML(triggerXML)
 end
 
-json = require 'json'
-socket = require 'socket'
-url = require 'socket.url'
-http = require 'socket.http'
-
 chatID = <your chat ID>
 
 apiToken = "<your bot token>"
 
-alertFormat = "https://api.telegram.org/" .. apiToken .. "/sendMessage?chat_id=%s&text=%s"
+alertFormat = "https://api.telegram.org/" .. apiToken .. "/sendMessage?chat_id=" .. chatID .. "&text=%s"
 
 function url_encode(str)
     if str then
@@ -59,24 +56,17 @@ function url_encode(str)
 end
 
 function pageRequest(req, protocol)
-    async_ok, async = pcall(require, "async")
-
     if async_ok then
-        retpage = async.request(req, protocol)
-    end
-
-    retval, page, status, headers, full_status = retpage:join()
-    retpage = nil
-
-    if status == 200 then
-        return page
+        async.doAsyncRemoteRequest(req, "", protocol)
+    else
+        ColourNote("white", "blue", "Async failed to load for some reason.")
     end
 end
 
 function sendAlert(name, line, wildcards)
     for _,v in ipairs(triggerLines) do
         if name == v.name then
-            msg = string.format(alertFormat, chatID, v.message)
+            msg = string.format(alertFormat, v.message)
             break
         end
     end
