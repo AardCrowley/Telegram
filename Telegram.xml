@@ -28,6 +28,8 @@
     <script>
         <![CDATA[
 async_ok, async = pcall(require, "async")
+socket = require 'socket'
+url = require 'socket.url'
 
 local triggerLines = {
 {name = "regularDouble", match = "^For the next 15 minutes experience is doubled in honor of the new superhero.", message = "Double for 15 minutes!"},
@@ -80,7 +82,7 @@ function sendAlert(name, line, wildcards)
     if name ~= "TestAlert" then
         for _,v in ipairs(triggerLines) do
             if name == v.name then
-                msg = string.format(alertFormat, v.message .. wc)
+                msg = string.format(alertFormat, url.escape(v.message .. wc))
                 break
             end
         end
