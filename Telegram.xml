@@ -10,6 +10,18 @@
 
     </plugin>
 
+    <aliases>
+        <alias
+            name="TestAlert"
+            match="^tsend$"
+            script="sendAlert"
+            regexp="y"
+            ignore_case="y"
+            enabled="y"
+        >
+        </alias>
+    </aliases>
+
     <!--  Script  -->
 
 
@@ -64,11 +76,16 @@ function pageRequest(req, protocol)
 end
 
 function sendAlert(name, line, wildcards)
-    for _,v in ipairs(triggerLines) do
-        if name == v.name then
-            msg = string.format(alertFormat, v.message)
-            break
+    local wc = wildcards[1] or ""
+    if name ~= "TestAlert" then
+        for _,v in ipairs(triggerLines) do
+            if name == v.name then
+                msg = string.format(alertFormat, v.message .. wc)
+                break
+            end
         end
+    else
+        msg = string.format(alertFormat, "Test notification."
     end
     pageRequest(msg, "HTTPS")
 end
