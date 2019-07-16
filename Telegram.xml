@@ -85,7 +85,7 @@ function sendAlert(name, line, wildcards)
             end
         end
     else
-        msg = string.format(alertFormat, "Test notification."
+        msg = string.format(alertFormat, "Test notification.")
     end
     pageRequest(msg, "HTTPS")
 end
