@@ -50,7 +50,7 @@ If you're wanting to add new triggers, locate the 'triggerLines' portion, and ad
 
 ```lua
 
-{name = "<name of your trigger>", match = "<the trigger pattern to match>;", message = "<text you want sent>"},
+{name = "<name of your trigger>", match = "<the trigger pattern to match>", message = "<text you want sent>"},
 
 ```
 
