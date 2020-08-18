@@ -42,7 +42,11 @@ From here on out, it should work out of the gate.
 
 If you're wanting to add new triggers, locate the 'triggerLines' portion, and add your trigger as such:
 
+```lua
+
 {name = "&lt;name of your trigger&gt;", match = "&lt;the trigger pattern to match&gt;", message = "&lt;text you want sent&gt;"},
+
+```
 
 If you are wanting to add channel messages to Telegram such as tell notifications, you'll need to incorporate GMCP data into the plugin. It will look something like the following:
 
