@@ -26,15 +26,21 @@ The next step will be to get your chat ID. The easiest way I've found to do this
 
 Now, open the plugin and make the following changes. Where it says:
 
-chatID = &lt;your chat ID&gt;
+```lua
+chatID = <your chat ID>
+```
 
 replace &lt;your chat ID&gt; with the ID you picked up from the previous step. Where it says:
 
-apiToken = "&lt;your bot token&gt;"
+```lua
+apiToken = "<your bot token>"
+```
 
 change it to say:
 
-apiToken = "bot&lt;token&gt;"
+```lua
+apiToken = "bot<token>"
+```
 
 where &lt;token&gt; again is what you received from creating your bot. It is imperative that "bot" precedes it. The plugin will not work without it.
 
