@@ -54,6 +54,8 @@ If you're wanting to add new triggers, locate the 'triggerLines' portion, and ad
 
 ```
 
+As long as you follow that format, you should be able to add as many triggers as you like.
+
 If you are wanting to add channel messages to Telegram such as tell notifications, you'll need to incorporate GMCP data into the plugin. It will look something like the following:
 
 ```lua
@@ -73,5 +75,6 @@ function OnPluginBroadcast(msg, id, name, text)
     end
 end
 ```
+Please be aware that if you utilize this feature so you can bot and pass bot checks, you are a bad person and you will be caught eventually. This feature is only to be used so you do not miss any tells for legitimate reasons. Besides, the Imms have other ways to botcheck you, too.
 
-As long as you follow that format, you should be able to add as many triggers as you like. If you have any questions or difficulties, please feel free to drop me (Crowley) a tell or a note on personal board.
+If you have any questions or difficulties, please feel free to drop me (Crowley) a tell or a note on personal board.
