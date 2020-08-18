@@ -14,13 +14,13 @@ First things first, you need to install Telegram. Though the most common use wou
 
 Your next order of business will be to get your own Bot API token. To do this, you'll need to talk to the Botfather, which you can add to your application here: https://telegram.me/botfather
 
-Once he's been added, you'll simply type /newbot in order to create your first bot. You'll receive an API token for it, so you'll want to copy that token and save it somewhere as you'll be using it shortly.
+Once he's been added, you'll simply type `/newbot` in order to create your first bot. You'll receive an API token for it, so you'll want to copy that token and save it somewhere as you'll be using it shortly.
 
-To add your bot's channel to Telegram, you'll need to click the link from Botfather's message congratulating you on creating your bot. It'll be t.me/&lt;yourbotname&gt;. Then click 'Start' and send a message in preparation for the next step.
+To add your bot's channel to Telegram, you'll need to click the link from Botfather's message congratulating you on creating your bot. It'll be `t.me/&lt;yourbotname&gt;`. Then click `Start` and send a message in preparation for the next step.
 
 # Getting your Chat ID
 
-The next step will be to get your chat ID. The easiest way I've found to do this is using the test message in your new Bot channel. Go to the following page: https://api.telegram.org/bot[token]/getUpdates (where &lt;token&gt; is the token you got in the last step). Upon heading to the site, you'll see a JSON-formatted list of information. Look specifically for the table "chat", which has an "id" field. Copy that ID (including any negative symbols).
+The next step will be to get your chat ID. The easiest way I've found to do this is using the test message in your new Bot channel. Go to the following page: `https://api.telegram.org/bot[token]/getUpdates` (where &lt;token&gt; is the token you got in the last step). Upon heading to the site, you'll see a JSON-formatted list of information. Look specifically for the table `chat`, which has an `id` field. Copy that ID (including any negative symbols).
 
 # Putting it all together
 
@@ -30,7 +30,7 @@ Now, open the plugin and make the following changes. Where it says:
 chatID = <your chat ID>
 ```
 
-replace &lt;your chat ID&gt; with the ID you picked up from the previous step. Where it says:
+replace `<your chat ID>` with the ID you picked up from the previous step. Where it says:
 
 ```lua
 apiToken = "<your bot token>"
@@ -42,11 +42,11 @@ change it to say:
 apiToken = "bot<token>"
 ```
 
-where &lt;token&gt; again is what you received from creating your bot. It is imperative that "bot" precedes it. The plugin will not work without it.
+where `<token>` again is what you received from creating your bot. It is imperative that "bot" precedes it. The plugin will not work without it.
 
 From here on out, it should work out of the gate.
 
-If you're wanting to add new triggers, locate the 'triggerLines' portion, and add your trigger as such:
+If you're wanting to add new triggers, locate the `triggerLines` section, and add your trigger as such:
 
 ```lua
 
