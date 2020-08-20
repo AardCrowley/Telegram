@@ -48,7 +48,13 @@ If you're wanting to add new triggers, locate the `triggerLines` section, and ad
 
 ```
 
-As long as you follow that format, you should be able to add as many triggers as you like.
+An example pulled directly from the plugin is this, for quest alerts:
+
+```lua
+{name = "questAlert", match = "^QUEST: You may now quest again.", message = "Quest time!"},
+```
+
+Please note, you can use wildcard symbols (use regular expression for the matches), but it will not process within the message. Otherwise, as long as you follow this format, you should be able to add as many triggers as you like.
 
 If you are wanting to add channel messages to Telegram such as tell notifications, you'll need to incorporate GMCP data into the plugin. It will look something like the following:
 
