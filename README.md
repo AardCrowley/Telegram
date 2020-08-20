@@ -36,7 +36,7 @@ replace `<your chat ID>` with the ID you picked up from the previous step. Where
 apiToken = "<your bot token>"
 ```
 
-replace `<token>` again is what you received from creating your bot. It is imperative that "bot" precedes it. The plugin will not work without it.
+replace `<token>` where again is what you received from creating your bot.
 
 From here on out, it should work out of the gate.
 
