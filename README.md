@@ -20,7 +20,7 @@ To add your bot's channel to Telegram, you'll need to click the link from Botfat
 
 # Getting your Chat ID
 
-The next step will be to get your chat ID. The easiest way I've found to do this is using the test message in your new Bot channel. Go to the following page: `https://api.telegram.org/bot[token]/getUpdates` (where &lt;token&gt; is the token you got in the last step). Upon heading to the site, you'll see a JSON-formatted list of information. Look specifically for the table `chat`, which has an `id` field. Copy that ID (including any negative symbols).
+The next step will be to get your chat ID. The easiest way I've found to do this is using the test message in your new Bot channel. Go to the following page: `https://api.telegram.org/bot<token>/getUpdates` (where `<token>` is the token you got in the last step). Upon heading to the site, you'll see a JSON-formatted list of information. Look specifically for the table `chat`, which has an `id` field. Copy that ID (including any negative symbols).
 
 # Putting it all together
 
