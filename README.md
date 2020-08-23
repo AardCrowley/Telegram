@@ -16,7 +16,7 @@ Your next order of business will be to get your own Bot API token. To do this, y
 
 Once he's been added, you'll simply type `/newbot` in order to create your first bot. You'll receive an API token for it, so you'll want to copy that token and save it somewhere as you'll be using it shortly.
 
-To add your bot's channel to Telegram, you'll need to click the link from Botfather's message congratulating you on creating your bot. It'll be `t.me/&lt;yourbotname&gt;`. Then click `Start` and send a message in preparation for the next step.
+To add your bot's channel to Telegram, you'll need to click the link from Botfather's message congratulating you on creating your bot. It'll be `t.me/<yourbotname>`. Then click `Start` and send a message in preparation for the next step.
 
 # Getting your Chat ID
 
@@ -36,7 +36,7 @@ replace `<your chat ID>` with the ID you picked up from the previous step. Where
 apiToken = "<your bot token>"
 ```
 
-replace `<token>` where again is what you received from creating your bot.
+replace `<token>` where again it is what you received from creating your bot.
 
 From here on out, it should work out of the gate.
 
