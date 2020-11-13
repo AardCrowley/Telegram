@@ -94,6 +94,7 @@ end
 
 function toggleConfig(name, line, wildcards)
     EnableTriggerGroup("Notifier", (true and (wildcards[1] == "on")))
+    ColourNote("goldenrod", "navy", "Turning Telegram functionality " .. wildcards[1] .. "!")
 end
 
 ]]>
