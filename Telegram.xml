@@ -22,21 +22,6 @@
         </alias>
     </aliases>
 
-    <!--  Triggers  -->
-
-    <triggers>
-        <trigger 
-            name="gqAlert" 
-            enabled="y" 
-            keep_evaluating="y" 
-            group="Notifier" 
-            match="^Global Quest\: Global quest \# (.*?) has been declared for levels ([0-9]*?) to ([0-9]*?)\.$" 
-            regexp="y" 
-            script="sendAlert" 
-            sequence="100" >
-        </trigger>
-    </triggers>
-
     <!--  Script  -->
 
     <script>
@@ -51,6 +36,7 @@ local triggerLines = {
 {name = "donationDouble", match ="\\[    10 minutes of double exp started courtesy of donations being open   \\]", message = "Double for 10 minutes!"},
 {name = "hourDouble", match = "^For the next 60 minutes all experience is doubled!!$", message = "Hour of double!"},
 {name = "questAlert", match = "^QUEST: You may now quest again.", message = "Quest time!"},
+{name = "gqAlert", match = "^Global Quest\: Global quest \# (.*?) has been declared(.*?)$", message = "GQ ALERT#"},
 }
 
 
@@ -91,31 +77,8 @@ function pageRequest(req, protocol)
     end
 end
 
-function getGQAlertMessage(wildcards)
-    -- get gq information
-    local gqid = wildcards[1]
-    local lower = tonumber(wildcards[2])
-    local upper = tonumber(wildcards[3])
-
-    -- get character information
-    local ret, datastring = CallPlugin("3e7dedbe37e44942dd46d264", "gmcpdata_as_string", "char.status")
-    pcall(loadstring("status_table = "..datastring))
-    local char_level = tonumber(status_table["level"])
-
-    -- verification and message creation
-    if char_level >= lower and char_level <= upper then
-        return "GQ ALERT#" .. gqid
-    end
-end
-
 function sendAlert(name, line, wildcards)
-    if name == "gqAlert" then
-        msg = getGQAlertMessage(wildcards)
-        if msg == nil then
-            return
-        end
-        msg = string.format(alertFormat, url.escape(msg))
-    elseif name ~= "TestAlert" then
+    if name ~= "TestAlert" then
         local wc = wildcards[1] or ""
         for _,v in ipairs(triggerLines) do
             if name == v.name then
