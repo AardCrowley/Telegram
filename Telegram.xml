@@ -24,7 +24,6 @@
 
     <!--  Script  -->
 
-
     <script>
         <![CDATA[
 async_ok, async = pcall(require, "async")
@@ -37,6 +36,7 @@ local triggerLines = {
 {name = "donationDouble", match ="\\[    10 minutes of double exp started courtesy of donations being open   \\]", message = "Double for 10 minutes!"},
 {name = "hourDouble", match = "^For the next 60 minutes all experience is doubled!!$", message = "Hour of double!"},
 {name = "questAlert", match = "^QUEST: You may now quest again.", message = "Quest time!"},
+{name = "gqAlert", match = "^Global Quest\: Global quest \# (.*?) has been declared(.*?)$", message = "GQ ALERT#"},
 }
 
 
@@ -78,8 +78,8 @@ function pageRequest(req, protocol)
 end
 
 function sendAlert(name, line, wildcards)
-    local wc = wildcards[1] or ""
     if name ~= "TestAlert" then
+        local wc = wildcards[1] or ""
         for _,v in ipairs(triggerLines) do
             if name == v.name then
                 msg = string.format(alertFormat, url.escape(v.message .. wc))
