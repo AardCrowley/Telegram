@@ -36,7 +36,7 @@ local triggerLines = {
 {name = "donationDouble", match ="\\[    10 minutes of double exp started courtesy of donations being open   \\]", message = "Double for 10 minutes!"},
 {name = "hourDouble", match = "^For the next 60 minutes all experience is doubled!!$", message = "Hour of double!"},
 {name = "questAlert", match = "^QUEST: You may now quest again.", message = "Quest time!"},
-{name = "gqAlert", match = "^Global Quest\: Global quest \# (.*?) has been declared(.*?)$", message = "GQ ALERT#"},
+{name = "gqAlert", match = "^Global Quest\\: Global quest \\# (.*?) has been declared(.*?)$", message = "GQ ALERT#"},
 }
 
 
