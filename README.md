@@ -1,4 +1,4 @@
-# Telegram
+# Telegram (Update with a NEW FEATURE! See below.)
 
 Note: You will need a later version than r1825 of MUSHclient, so if you haven't updated in a while, you should.
 
