@@ -52,7 +52,7 @@ for _,v in ipairs(triggerLines) do
     ImportXML(triggerXML)
 end
 
-chatID = <your chat ID>
+chatID = <your chat id>
 
 apiToken = "<your bot token>"
 
@@ -69,10 +69,10 @@ function url_encode(str)
     return str
 end
 
-function pageRequest(req, protocol)
-    local req = string.format(alertFormat, req)
+function pageRequest(req)
+    local req = string.format(alertFormat, url.escape(req))
     if async_ok then
-        async.doAsyncRemoteRequest(req, "", protocol)
+        async.doAsyncRemoteRequest(req, "", "HTTPS")
     else
         ColourNote("white", "blue", "Async failed to load for some reason.")
     end
@@ -90,7 +90,7 @@ function sendAlert(name, line, wildcards)
     else
         msg = "Test notification."
     end
-    pageRequest(msg, "HTTPS")
+    pageRequest(msg)
 end
 
 function toggleConfig(name, line, wildcards)
