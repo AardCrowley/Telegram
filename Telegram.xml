@@ -20,6 +20,15 @@
             enabled="y"
         >
         </alias>
+        <alias
+            name="tnotify"
+            match="tnotify *"
+            send_to="12"
+            ignore_case="y"
+            enabled="y"
+        >
+            <send>pageRequest("%1")</send>
+        </alias>
     </aliases>
 
     <!--  Script  -->
