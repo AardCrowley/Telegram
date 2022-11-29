@@ -88,6 +88,14 @@ Now you can set your own triggers client-side as of 11/29/2022 (or 29/11/2022 fo
 
 ```CallPlugin("f99bb4b89cfa8c90ac2d03d5", "pageRequest", "Whatever your want your message to be.")```
 
+To make things easier, I did add an alias:
+
+```tnotify *```
+
+If you type `tnotify This is a test`, it should send a notification.
+
+# Disclaimer
+
 Please be aware that if you utilize this feature so you can bot and pass bot checks, you are a bad person and you will be caught eventually. This feature is only to be used so you do not miss any tells for legitimate reasons. Besides, the Imms have other ways to botcheck you, too.
 
 If you have any questions or difficulties, please feel free to drop me (Crowley) a tell or a note on personal board.
