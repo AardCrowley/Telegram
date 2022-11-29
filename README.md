@@ -47,7 +47,7 @@ replace `<token>` where again it is what you received from creating your bot.
 
 From here on out, it should work out of the gate.
 
-If you're wanting to add new triggers, locate the `triggerLines` section, and add your trigger as such:
+If you're wanting to add new triggers, locate the `triggerLines` section, and add your trigger as such: ** For ease, check further below for a new way to do triggers **
 
 ```lua
 
