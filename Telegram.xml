@@ -83,7 +83,7 @@ function sendAlert(name, line, wildcards)
         local wc = wildcards[1] or ""
         for _,v in ipairs(triggerLines) do
             if name == v.name then
-                msg = url.escape(v.message .. wc)
+                msg = v.message .. wc
                 break
             end
         end
