@@ -75,13 +75,19 @@ function OnPluginBroadcast(msg, id, name, text)
             cmsg, player = strip_colours(gmcp('comm.channel.msg')), gmcp('comm.channel.player')
 
             if player ~= gmcp("char.base.name") then
-                msg = url.escape(cmsg)
-                pageRequest(msg, "HTTPS")
+                pageRequest(cmsg)
             end
         end
     end
 end
 ```
+
+# New feature: Setting your own triggers client-side
+
+Now you can set your own triggers client-side as of 11/29/2022 (or 29/11/2022 for you non-Americans!). Simply create the trigger you want an alert for and use the following syntax to utilize it:
+
+```CallPlugin("f99bb4b89cfa8c90ac2d03d5", "pageRequest", "Whatever your want your message to be.")```
+
 Please be aware that if you utilize this feature so you can bot and pass bot checks, you are a bad person and you will be caught eventually. This feature is only to be used so you do not miss any tells for legitimate reasons. Besides, the Imms have other ways to botcheck you, too.
 
 If you have any questions or difficulties, please feel free to drop me (Crowley) a tell or a note on personal board.
