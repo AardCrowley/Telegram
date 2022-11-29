@@ -70,6 +70,7 @@ function url_encode(str)
 end
 
 function pageRequest(req, protocol)
+    local req = string.format(alertFormat, req)
     if async_ok then
         async.doAsyncRemoteRequest(req, "", protocol)
     else
@@ -82,12 +83,12 @@ function sendAlert(name, line, wildcards)
         local wc = wildcards[1] or ""
         for _,v in ipairs(triggerLines) do
             if name == v.name then
-                msg = string.format(alertFormat, url.escape(v.message .. wc))
+                msg = url.escape(v.message .. wc)
                 break
             end
         end
     else
-        msg = string.format(alertFormat, "Test notification.")
+        msg = "Test notification."
     end
     pageRequest(msg, "HTTPS")
 end
