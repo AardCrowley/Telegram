@@ -75,7 +75,7 @@ function OnPluginBroadcast(msg, id, name, text)
             cmsg, player = strip_colours(gmcp('comm.channel.msg')), gmcp('comm.channel.player')
 
             if player ~= gmcp("char.base.name") then
-                msg = string.format(alertFormat, url.escape(cmsg))
+                msg = url.escape(cmsg)
                 pageRequest(msg, "HTTPS")
             end
         end
